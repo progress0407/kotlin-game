@@ -3,6 +3,7 @@ package learn.kotlin.racingcar.domain.integration
 import learn.kotlin.racingcar.domain.Car
 import learn.kotlin.racingcar.domain.CarFixedMovingStrategy
 import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class CarIntegrationTest {
@@ -13,14 +14,14 @@ class CarIntegrationTest {
         val car = Car("philz", movingStrategy)
 
         car.move()
-        Assertions.assertThat(car.position).isEqualTo(1);
+        assertThat(car.position).isEqualTo(1);
 
         movingStrategy.changeMoveStatus(false)
         car.move()
-        Assertions.assertThat(car.position).isEqualTo(1);
+        assertThat(car.position).isEqualTo(1);
 
         movingStrategy.changeMoveStatus(true)
         car.move()
-        Assertions.assertThat(car.position).isEqualTo(2);
+        assertThat(car.position).isEqualTo(2);
     }
 }
