@@ -1,6 +1,6 @@
-package learn.kotlin.racingcar.domain.cargame
+package racingcar.domain.states
 
-import learn.kotlin.racingcar.domain.GameMemory
+import racingcar.domain.GameMemory
 
 abstract class CarGame(protected val gameMemory: GameMemory) {
 

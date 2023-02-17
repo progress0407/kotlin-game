@@ -1,4 +1,4 @@
-package learn.kotlin.racingcar.domain
+package racingcar.domain
 
 enum class GameState {
 

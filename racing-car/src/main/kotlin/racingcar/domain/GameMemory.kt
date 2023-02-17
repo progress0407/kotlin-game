@@ -1,6 +1,6 @@
-package learn.kotlin.racingcar.domain
+package racingcar.domain
 
-import learn.kotlin.racingcar.domain.moviing.CarRandomMovingStrategy
+import racingcar.domain.moving.CarRandomMovingStrategy
 
 data class GameMemory(
     var gameState: GameState = GameState.INPUT,

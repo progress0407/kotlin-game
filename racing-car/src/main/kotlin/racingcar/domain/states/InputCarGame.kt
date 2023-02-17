@@ -1,7 +1,7 @@
-package learn.kotlin.racingcar.domain.cargame
+package racingcar.domain.states
 
-import learn.kotlin.racingcar.domain.GameMemory
-import learn.kotlin.racingcar.domain.Car
+import racingcar.domain.Car
+import racingcar.domain.GameMemory
 import java.util.*
 
 class InputCarGame(gameMemory: GameMemory) : CarGame(gameMemory) {

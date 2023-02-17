@@ -1,4 +1,4 @@
-package learn.kotlin.racingcar.domain.moviing
+package racingcar.domain.moving
 
 import java.util.Random
 

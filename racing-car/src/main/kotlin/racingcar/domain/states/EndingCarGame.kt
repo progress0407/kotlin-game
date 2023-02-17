@@ -1,7 +1,7 @@
-package learn.kotlin.racingcar.domain.cargame
+package racingcar.domain.states
 
-import learn.kotlin.racingcar.domain.GameMemory
-import learn.kotlin.racingcar.domain.winners
+import racingcar.domain.GameMemory
+import racingcar.domain.winners
 
 class EndingCarGame(gameMemory: GameMemory) : CarGame(gameMemory) {
 

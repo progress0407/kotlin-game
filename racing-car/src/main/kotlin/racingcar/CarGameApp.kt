@@ -1,9 +1,10 @@
-package learn.kotlin.racingcar
+package racingcar
 
-import learn.kotlin.racingcar.domain.*
-import learn.kotlin.racingcar.domain.cargame.EndingCarGame
-import learn.kotlin.racingcar.domain.cargame.InputCarGame
-import learn.kotlin.racingcar.domain.cargame.RunningCarGame
+import racingcar.domain.GameMemory
+import racingcar.domain.GameState
+import racingcar.domain.states.EndingCarGame
+import racingcar.domain.states.InputCarGame
+import racingcar.domain.states.RunningCarGame
 
 fun main() {
 

@@ -1,6 +1,5 @@
-package learn.kotlin.racingcar.domain
+package racingcar.domain.moving
 
-import learn.kotlin.racingcar.domain.moviing.CarRandomMovingStrategy
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.withinPercentage
 import org.junit.jupiter.api.Test

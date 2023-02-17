@@ -1,9 +1,9 @@
-package learn.kotlin.racingcar.domain.cargame
+package racingcar.domain.states
 
-import learn.kotlin.racingcar.domain.GameMemory
-import learn.kotlin.racingcar.domain.Car
-import learn.kotlin.racingcar.domain.move
-import learn.kotlin.racingcar.times
+import racingcar.domain.Car
+import racingcar.domain.GameMemory
+import racingcar.domain.move
+import racingcar.times
 
 class RunningCarGame(gameMemory: GameMemory) : CarGame(gameMemory) {
 

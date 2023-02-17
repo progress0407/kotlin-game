@@ -1,6 +1,6 @@
-package learn.kotlin.racingcar.domain
+package racingcar.domain
 
-import learn.kotlin.racingcar.domain.moviing.CarMovingStrategy
+import racingcar.domain.moving.CarMovingStrategy
 
 class Car(val name: String, private val movingStrategy: CarMovingStrategy) {
 

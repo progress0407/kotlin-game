@@ -1,8 +1,8 @@
-package learn.kotlin.racingcar.domain
+package racingcar.domain
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import java.util.Random
+import racingcar.domain.moving.CarFixedMovingStrategy
 
 class CarTest {
 

@@ -1,10 +1,9 @@
-package learn.kotlin.racingcar.domain.integration
+package racingcar.domain.integration
 
-import learn.kotlin.racingcar.domain.Car
-import learn.kotlin.racingcar.domain.CarFixedMovingStrategy
-import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import racingcar.domain.Car
+import racingcar.domain.moving.CarFixedMovingStrategy
 
 class CarIntegrationTest {
 

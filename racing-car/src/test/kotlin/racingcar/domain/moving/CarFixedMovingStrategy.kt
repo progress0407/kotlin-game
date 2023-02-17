@@ -1,6 +1,4 @@
-package learn.kotlin.racingcar.domain
-
-import learn.kotlin.racingcar.domain.moviing.CarMovingStrategy
+package racingcar.domain.moving
 
 class CarFixedMovingStrategy : CarMovingStrategy {
 
