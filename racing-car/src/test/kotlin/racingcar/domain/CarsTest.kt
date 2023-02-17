@@ -1,49 +1,50 @@
 package racingcar.domain
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
-import racingcar.domain.moving.CarFixedMovingStrategy
+import io.kotest.core.spec.style.DescribeSpec
+import io.kotest.matchers.collections.shouldContainExactlyInAnyOrder
+import io.kotest.matchers.collections.shouldHaveSize
+import io.kotest.matchers.shouldBe
+import racingcar.domain.fixture.CarFixture
 
-class CarsTest {
+class CarsTest : DescribeSpec({
 
-    @Test
-    fun `자동차들이 움직이면 움직인다`() {
-        // given
-        val car1 = Car("philz", CarFixedMovingStrategy())
+    describe("move()는") {
 
-        val car2movingStrategy = CarFixedMovingStrategy()
-        car2movingStrategy.changeMoveStatus(false)
-
-        val car2 = Car("foo", car2movingStrategy)
-
+        val car1 = CarFixture.FIRST_CAR()
+        val car2 = CarFixture.NOT_MOVED_CAR()
         val cars = listOf(car1, car2)
 
-        // when
-        cars.move()
+        context("자동차들이 움직이면") {
 
-        // then
-        assertThat(car1.position).isEqualTo(1)
-        assertThat(car2.position).isEqualTo(0)
-    }
-
-    @Test
-    fun `5번 이동했을 시 우승자를 선출한다`() {
-        // given
-        val philzCar = Car("philz", CarFixedMovingStrategy())
-        val aooCar = Car("aoo", CarFixedMovingStrategy())
-        val booCar = Car("boo", CarFixedMovingStrategy())
-
-        val cars = listOf(philzCar, aooCar, booCar)
-
-        for (index in 1..5) {
             cars.move()
+
+            it("위치 값이 증가한다") {
+
+                car1.position shouldBe 1
+                car2.position shouldBe 0
+            }
         }
-
-        // when
-        val winners = cars.winners()
-
-        // then
-        assertThat(winners.size).isEqualTo(3)
-        assertThat(winners).containsExactly(aooCar, booCar, philzCar)
     }
-}
+
+    describe("winner() 는") {
+
+        val car1 = CarFixture.FIRST_CAR()
+        val car2 = CarFixture.SECOND_CAR()
+        val car3 = CarFixture.NOT_MOVED_CAR()
+        val cars = listOf(car1, car2, car3)
+
+        context("경주를 한 결과") {
+
+            for (i in 1..5) {
+                cars.move()
+            }
+
+            it("우승자들을 선출한다") {
+                val winners: List<Car> = cars.winners()
+
+                winners shouldHaveSize 2
+                winners shouldContainExactlyInAnyOrder listOf(car1, car2)
+            }
+        }
+    }
+})

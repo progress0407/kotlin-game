@@ -15,6 +15,11 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     testImplementation("org.assertj:assertj-core:3.24.2")
+
+    val kotestVersion = "5.5.0"
+    listOf("runner-junit5", "assertions-core", "property").forEach {
+        library -> testImplementation("io.kotest:kotest-$library:$kotestVersion")
+    }
 }
 
 tasks.test {

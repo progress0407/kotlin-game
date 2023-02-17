@@ -1,26 +1,27 @@
 package racingcar.domain.integration
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
 import racingcar.domain.Car
 import racingcar.domain.moving.CarFixedMovingStrategy
 
-class CarIntegrationTest {
+class CarIntegrationTest : StringSpec({
 
-    @Test
-    fun `테스트 픽스쳐를 이용해서 자동차의 움직임을 제어할 수 있다자동차는 move를`() {
-        val movingStrategy: CarFixedMovingStrategy = CarFixedMovingStrategy()
-        val car = Car("philz", movingStrategy)
+    val movingStrategy = CarFixedMovingStrategy()
+    val car = Car("philz", movingStrategy)
+
+    "Fake Moving Strategy로 Car의 움직임을 제어한다" {
 
         car.move()
-        assertThat(car.position).isEqualTo(1);
+        car.position shouldBe 1
 
         movingStrategy.changeMoveStatus(false)
         car.move()
-        assertThat(car.position).isEqualTo(1);
+        car.position shouldBe 1
 
         movingStrategy.changeMoveStatus(true)
         car.move()
-        assertThat(car.position).isEqualTo(2);
+        car.position shouldBe 2
     }
-}
+
+})
