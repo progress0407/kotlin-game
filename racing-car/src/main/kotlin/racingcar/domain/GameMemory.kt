@@ -1,16 +1,14 @@
 package racingcar.domain
 
-import racingcar.domain.moving.CarRandomMovingStrategy
-
 data class GameMemory(
-    var gameState: GameState = GameState.INPUT,
-    val carMovingStrategy: CarRandomMovingStrategy = CarRandomMovingStrategy(),
-    val cars: MutableList<Car> = mutableListOf()
+    var gameState: GameState = GameState.INPUT
 ) {
 
-    fun inputAllCars(cars: List<Car>) {
+    var cars: Cars? = null
 
-        this.cars.addAll(cars)
+
+    fun inputCars(cars: Cars) {
+        this.cars = cars
     }
 
     fun nextTurn() {
@@ -19,5 +17,5 @@ data class GameMemory(
     }
 
     fun isEndGame(): Boolean =
-        cars.hasWinner()
+        cars!!.hasWinner()
 }

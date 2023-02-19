@@ -12,7 +12,7 @@ class CarsTest : DescribeSpec({
 
         val car1 = CarFixture.FIRST_CAR()
         val car2 = CarFixture.NOT_MOVED_CAR()
-        val cars = listOf(car1, car2)
+        val cars = Cars(listOf(car1, car2), 5)
 
         context("자동차들이 움직이면") {
 
@@ -31,7 +31,7 @@ class CarsTest : DescribeSpec({
         val car1 = CarFixture.FIRST_CAR()
         val car2 = CarFixture.SECOND_CAR()
         val car3 = CarFixture.NOT_MOVED_CAR()
-        val cars = listOf(car1, car2, car3)
+        val cars = Cars(listOf(car1, car2, car3), 5)
 
         context("경주를 한 결과") {
 

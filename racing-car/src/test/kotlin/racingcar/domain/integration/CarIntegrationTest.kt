@@ -23,5 +23,4 @@ class CarIntegrationTest : StringSpec({
         car.move()
         car.position shouldBe 2
     }
-
 })

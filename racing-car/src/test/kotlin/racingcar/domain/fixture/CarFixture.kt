@@ -4,6 +4,7 @@ import racingcar.domain.Car
 import racingcar.domain.moving.CarFixedMovingStrategy
 
 enum class CarFixture(protected val carName: String) {
+
     FIRST_CAR("first"),
     SECOND_CAR("second"),
     NOT_MOVED_CAR("not moving car") {
