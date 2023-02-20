@@ -31,11 +31,12 @@ class CarsTest : DescribeSpec({
         val car1 = CarFixture.FIRST_CAR()
         val car2 = CarFixture.SECOND_CAR()
         val car3 = CarFixture.NOT_MOVED_CAR()
-        val cars = Cars(listOf(car1, car2, car3), 5)
+        val winNumber = 5
+        val cars = Cars(listOf(car1, car2, car3), winNumber)
 
         context("경주를 한 결과") {
 
-            for (i in 1..5) {
+            for (i in 1..winNumber) {
                 cars.move()
             }
 

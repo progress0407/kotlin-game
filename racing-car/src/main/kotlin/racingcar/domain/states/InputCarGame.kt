@@ -3,13 +3,13 @@ package racingcar.domain.states
 import racingcar.domain.Car
 import racingcar.domain.Cars
 import racingcar.domain.GameMemory
-import racingcar.domain.moving.CarRandomMovingStrategy
+import racingcar.domain.moving.CarMovingStrategy
 import racingcar.io.IoWrapper
 
 class InputCarGame(
     gameMemory: GameMemory,
     private val io: IoWrapper,
-    private val movingStrategy: CarRandomMovingStrategy
+    private val movingStrategy: CarMovingStrategy
 ) : CarGame(gameMemory) {
 
     override fun execute() {

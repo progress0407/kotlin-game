@@ -2,24 +2,30 @@ package racingcar
 
 import racingcar.domain.GameMemory
 import racingcar.domain.GameState.*
+import racingcar.domain.moving.CarMovingStrategy
 import racingcar.domain.moving.CarRandomMovingStrategy
 import racingcar.domain.states.EndingCarGame
 import racingcar.domain.states.InputCarGame
 import racingcar.domain.states.RunningCarGame
-import racingcar.io.ConsoleIoWrapper
+import racingcar.io.IoWrapper
 
 fun main() {
 
+    val gameMemory = GameMemory()
+    val io = IoWrapper(System.`in`)
     val movingStrategy = CarRandomMovingStrategy()
-    val game = CarGameApp(movingStrategy)
+
+    val game = CarGameApp(gameMemory, io, movingStrategy)
 
     game.run()
 }
 
-class CarGameApp(movingStrategy: CarRandomMovingStrategy) {
+class CarGameApp(
+    private val gameMemory: GameMemory,
+    io: IoWrapper,
+    movingStrategy: CarMovingStrategy
+) {
 
-    private val gameMemory = GameMemory()
-    private val io = ConsoleIoWrapper()
 
     private val inputGame = InputCarGame(gameMemory, io, movingStrategy)
     private val runningGame = RunningCarGame(gameMemory)
@@ -55,6 +61,5 @@ class CarGameApp(movingStrategy: CarRandomMovingStrategy) {
         endGame.run()
     }
 }
-
 
 operator fun String.times(repeatNo: Int): String = this.repeat(repeatNo)

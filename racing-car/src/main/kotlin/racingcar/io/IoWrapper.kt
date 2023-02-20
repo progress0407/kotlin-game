@@ -1,8 +1,18 @@
 package racingcar.io
 
-interface IoWrapper {
+import java.io.InputStream
+import java.util.*
 
-    fun readLine(): String
+class IoWrapper(inputStream: InputStream) {
 
-    fun readNumber(): Int
+    private val scanner: Scanner
+
+    init {
+        this.scanner = Scanner(inputStream)
+    }
+
+    fun readLine(): String = scanner.nextLine()
+
+    fun readNumber(): Int = scanner.nextInt()
 }
+
