@@ -2,9 +2,13 @@ package racingcar.domain.states
 
 import racingcar.domain.Car
 import racingcar.domain.GameMemory
+import racingcar.time.TimeWrapper
 import racingcar.times
 
-class RunningCarGame(gameMemory: GameMemory) : CarGame(gameMemory) {
+class RunningCarGame(
+    gameMemory: GameMemory,
+    private val timeWrapper: TimeWrapper
+) : CarGame(gameMemory) {
 
     override fun execute() {
         println("실행 결과")
@@ -20,7 +24,7 @@ class RunningCarGame(gameMemory: GameMemory) : CarGame(gameMemory) {
 
     private fun displayCars() = display(gameMemory.cars!!.values())
 
-    private fun delay() = Thread.sleep(400)
+    private fun delay() = timeWrapper.delay()
 
     private fun gameIsRunning() = !gameMemory.isEndGame()
 
