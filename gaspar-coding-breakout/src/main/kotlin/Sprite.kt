@@ -25,6 +25,7 @@ open abstract class Sprite {
     }
 
     protected fun loadImage(filePath: String) {
+
         image = readImageIcon(filePath).image
     }
 }

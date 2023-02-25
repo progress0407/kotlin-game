@@ -1,4 +1,3 @@
-import java.awt.EventQueue
 import javax.swing.JFrame
 
 class Breakout : JFrame() {
@@ -11,12 +10,5 @@ class Breakout : JFrame() {
         setLocationRelativeTo(null)
         isResizable = false
         pack()
-    }
-}
-
-fun main() {
-    EventQueue.invokeLater {
-        val game = Breakout()
-        game.isVisible = true
     }
 }

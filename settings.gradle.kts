@@ -17,3 +17,4 @@ pluginManagement {
 }
 include("gaspar-coding-breakout")
 include("nadongbin-rhythm-game")
+include("gui-global-utils")
