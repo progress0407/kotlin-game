@@ -29,8 +29,8 @@ subprojects {
         testImplementation(kotlin("test"))
         testImplementation("org.assertj:assertj-core:$assertJCoreVersion")
 
-        listOf("runner-junit5", "assertions-core", "property").forEach {
-                library -> testImplementation("io.kotest:kotest-$library:$kotestVersion")
+        listOf("runner-junit5", "assertions-core", "property").forEach { library ->
+            testImplementation("io.kotest:kotest-$library:$kotestVersion")
         }
     }
 
@@ -46,6 +46,6 @@ subprojects {
 project("tetris") {
 
     task("hello").doLast {
-        println ("hello, ${project.name}")
+        println("hello, ${project.name}")
     }
 }
