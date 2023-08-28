@@ -7,7 +7,7 @@ import racingcar.domain.GameMemory
 import racingcar.domain.GameState
 import racingcar.domain.moving.CarFixedMovingStrategy
 import racingcar.io.IoWrapper
-import racingcar.time.TimeWrapper
+import racingcar.time.TimeDelay
 import java.io.ByteArrayInputStream
 import java.io.InputStream
 
@@ -18,10 +18,10 @@ class CarGameAppTest : BehaviorSpec({
         val inputStream = createInputStream("bb,cc,aa\n5")
 
         val gameMemory = GameMemory()
-        val timeWrapper = TimeWrapper()
+        val timeDelay = TimeDelay()
         val io = IoWrapper(inputStream)
         val movingStrategy = CarFixedMovingStrategy()
-        val carGameApp = CarGameApp(gameMemory, timeWrapper, io, movingStrategy)
+        val carGameApp = CarGameApp(gameMemory, timeDelay, io, movingStrategy)
 
         `when`("경주를 하면") {
 

@@ -7,21 +7,21 @@ import racingcar.domain.states.EndingCarGame
 import racingcar.domain.states.InputCarGame
 import racingcar.domain.states.RunningCarGame
 import racingcar.io.IoWrapper
-import racingcar.time.TimeWrapper
+import racingcar.time.TimeDelay
 
 class CarGameApp(
     private val gameMemory: GameMemory,
-    timeWrapper: TimeWrapper,
+    timeDelay: TimeDelay,
     io: IoWrapper,
     movingStrategy: CarMovingStrategy
 ) {
 
     private val inputGame = InputCarGame(gameMemory, io, movingStrategy)
-    private val runningGame = RunningCarGame(gameMemory, timeWrapper)
+    private val runningGame = RunningCarGame(gameMemory, timeDelay)
     private val endGame = EndingCarGame(gameMemory)
 
     fun run() {
-        while (true)
+        while (true) {
             when (gameMemory.gameState) {
                 INPUT -> input()
                 RUNNING -> runGame()
@@ -30,6 +30,7 @@ class CarGameApp(
                     break
                 }
             }
+        }
     }
 
     private fun input() {

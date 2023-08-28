@@ -2,12 +2,12 @@ package racingcar.domain.states
 
 import racingcar.domain.Car
 import racingcar.domain.GameMemory
-import racingcar.time.TimeWrapper
+import racingcar.time.TimeDelay
 import racingcar.times
 
 class RunningCarGame(
     gameMemory: GameMemory,
-    private val timeWrapper: TimeWrapper
+    private val timeDelay: TimeDelay
 ) : CarGame(gameMemory) {
 
     override fun execute() {
@@ -24,21 +24,18 @@ class RunningCarGame(
 
     private fun displayCars() = display(gameMemory.cars!!.values())
 
-    private fun delay() = timeWrapper.delay()
+    private fun delay() = timeDelay.delay()
 
     private fun gameIsRunning() = !gameMemory.isRunningGame()
 
     private fun display(cars: List<Car>) {
-
         for (car in cars) {
             display(car)
         }
-
         printEmptyLine()
     }
 
     private fun display(car: Car) {
-
         val visualizedPosition = "-" * car.position
         println("${car.name}: $visualizedPosition")
     }

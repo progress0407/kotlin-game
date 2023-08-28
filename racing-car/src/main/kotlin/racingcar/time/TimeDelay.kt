@@ -1,6 +1,6 @@
 package racingcar.time
 
-class TimeWrapper(private val milliSecond: Long) {
+class TimeDelay(private val milliSecond: Long) {
 
     constructor() : this(0)
 
