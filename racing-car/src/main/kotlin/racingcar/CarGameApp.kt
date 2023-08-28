@@ -21,21 +21,15 @@ class CarGameApp(
     private val endGame = EndingCarGame(gameMemory)
 
     fun run() {
-
-        while (true) when (gameMemory.gameState) {
-            INPUT -> {
-                input()
+        while (true)
+            when (gameMemory.gameState) {
+                INPUT -> input()
+                RUNNING -> runGame()
+                END -> {
+                    end()
+                    break
+                }
             }
-
-            RUNNING -> {
-                runGame()
-            }
-
-            END -> {
-                end()
-                break
-            }
-        }
     }
 
     private fun input() {

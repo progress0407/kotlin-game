@@ -10,6 +10,7 @@ class CarRandomMovingStrategy : CarMovingStrategy {
 
         val randomNo = random.nextInt(10)
 
+        // TODO Refactor This !!
         if (randomNo in 0..3) {
             return false
         }

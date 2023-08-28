@@ -26,7 +26,7 @@ class RunningCarGame(
 
     private fun delay() = timeWrapper.delay()
 
-    private fun gameIsRunning() = !gameMemory.isEndGame()
+    private fun gameIsRunning() = !gameMemory.isRunningGame()
 
     private fun display(cars: List<Car>) {
 
