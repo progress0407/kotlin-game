@@ -2,5 +2,6 @@ class Main {
 }
 
 fun main() {
-    println("hello")
+    val baseBallGame = BaseBallGame()
+    baseBallGame.run()
 }
