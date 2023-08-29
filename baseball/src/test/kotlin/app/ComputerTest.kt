@@ -36,7 +36,7 @@ class ComputerTest : StringSpec({
         matchResults.strike shouldBe 0
     }
 
-    "1 스트라이크 2볼인 경우" {
+    "2볼 1스트라이크 인 경우" {
         val player = Player(numbers(1, 2, 3))
         val computer = Computer(numbers(1, 3, 2))
 
