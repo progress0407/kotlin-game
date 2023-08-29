@@ -1,3 +1,7 @@
+package app
+
+import app.BallNumber
+import app.MatchResult
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 

@@ -1,5 +1,7 @@
-import MatchResult.BALL
-import MatchResult.STRIKE
+package app
+
+import app.MatchResult.BALL
+import app.MatchResult.STRIKE
 
 data class MatchResults(private val matchResultCollection: List<MatchResult>) {
 

@@ -1,3 +1,5 @@
+package app
+
 fun <T> permutation(elements: List<T>, r: Int): List<List<T>> {
     if (r > elements.size) return emptyList()
     if (r == 0) return listOf(emptyList())

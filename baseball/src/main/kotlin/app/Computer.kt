@@ -1,3 +1,5 @@
+package app
+
 class Computer(ballNumbers: List<BallNumber>) : Participant(ballNumbers) {
 
     // TODO 계산 로직 : Participant

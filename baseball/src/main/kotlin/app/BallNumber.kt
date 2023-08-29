@@ -1,3 +1,5 @@
+package app
+
 data class BallNumber(
     private val index: Int,
     private val value: Int
