@@ -7,31 +7,44 @@ class BaseBallGame {
     private val scanner = Scanner(System.`in`)
 
     fun run() {
-        val computer = Computer(computerNumbers())
-        println("computer.numbers = ${computer.numbers}")
-        println("숫자를 입력해 주세요 : ")
-        val numbersString = inputNumber()
-        val numbers = convert(numbersString)
-        val player = Player(numbers)
-        val matchResults = computer.match(player)
-        println("matchResults = ${matchResults}")
-        println(view(matchResults))
+        while (true) {
+            val computer = Computer(computerNumbers())
+            println("# 컴터 숫자 = ${computer.ballNumbers}")
+            while (true) {
+                println("숫자를 입력해 주세요 : ")
+                val numbersString = inputString()
+                val numbers = convert(numbersString)
+                val player = Player(numbers)
+                val matchResults = computer.match(player)
+                println("# 매칭 결과 = $matchResults")
+                println(view(matchResults))
+                if (matchResults.isAllStrike()) {
+                    break
+                }
+            }
+            println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.")
+            val continueJudgeNumber = inputNumber()
+            if (continueJudgeNumber == 2) {
+                break
+            }
+        }
     }
 
-    private fun computerNumbers(): List<Number> {
+    private fun computerNumbers(): List<BallNumber> {
 
         val n = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
         val r = 3
-        val numbers = permutation(n, r)[randomNumber()]
-            .mapIndexed { index, value -> Number(index, value) }
+        val ballNumbers = permutation(n, r)[randomNumber()]
+            .mapIndexed { index, value -> BallNumber(index, value) }
 
-        return numbers
+        return ballNumbers
     }
 
-    private fun inputNumber() = scanner.nextLine()!!
+    private fun inputString() = scanner.nextLine()!!
+    private fun inputNumber() = scanner.nextInt()
 
     private fun convert(numbersString: String) = numbersString.toCharArray().withIndex()
-        .map { Number(it.index, it.value.code) }
+        .map { BallNumber(it.index, it.value.code - '0'.code) }
         .toList()
 
     private fun randomNumber(): Int {

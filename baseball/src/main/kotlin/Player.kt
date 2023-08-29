@@ -1,2 +1,2 @@
-class Player(numbers: List<Number>) : Participant(numbers) {
+class Player(ballNumbers: List<BallNumber>) : Participant(ballNumbers) {
 }

@@ -1,11 +1,11 @@
-class Computer(numbers: List<Number>) : Participant(numbers) {
+class Computer(ballNumbers: List<BallNumber>) : Participant(ballNumbers) {
 
     // TODO 계산 로직 : Participant
     fun match(other: Participant): MatchResults {
 
         val matchResultCollection = mutableListOf<MatchResult>()
-        for (number in numbers) {
-            for (otherNumber in other.numbers) {
+        for (number in ballNumbers) {
+            for (otherNumber in other.ballNumbers) {
                 val matchResult = number.compare(otherNumber)
                 if (matchResult != MatchResult.NOTHING) {
                     matchResultCollection.add(matchResult)

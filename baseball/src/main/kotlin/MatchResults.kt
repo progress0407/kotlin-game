@@ -24,6 +24,9 @@ data class MatchResults(private val matchResultCollection: List<MatchResult>) {
 
     fun nothingCase() = values[BALL]!! == 0 && values[STRIKE]!! == 0
 
+    fun isAllStrike() = strike == 3
+    val allStrike get() = strike == 3
+
     val ball get() = values[BALL]!!
 
     val strike get() = values[STRIKE]!!

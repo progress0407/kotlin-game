@@ -1,24 +1,24 @@
-data class Number(
+data class BallNumber(
     private val index: Int,
     private val value: Int
 ) {
 
-    fun compare(other: Number): MatchResult =
+    fun compare(other: BallNumber): MatchResult =
         when {
             strikeCase(other) -> MatchResult.STRIKE
             ballCase(other) -> MatchResult.BALL
             else -> MatchResult.NOTHING
         }
 
-    private fun strikeCase(other: Number) = this == other
+    private fun strikeCase(other: BallNumber) = this == other
 
-    private fun ballCase(other: Number) = this.value == other.value && this.index != other.index
+    private fun ballCase(other: BallNumber) = this.value == other.value && this.index != other.index
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as Number
+        other as BallNumber
 
         if (index != other.index) return false
         if (value != other.value) return false
