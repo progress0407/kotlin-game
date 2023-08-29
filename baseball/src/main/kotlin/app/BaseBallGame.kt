@@ -1,5 +1,7 @@
 package app
 
+import app.participant.Computer
+import app.participant.Player
 import java.util.Random
 import java.util.Scanner
 import kotlin.random.asKotlinRandom
@@ -11,14 +13,13 @@ class BaseBallGame {
     fun run() {
         while (true) {
             val computer = Computer(computerNumbers())
-            println("# 컴터 숫자 = ${computer.ballNumbers}")
+            println("### Computer Number = ${computer.ballNumbers} ###")
             while (true) {
                 println("숫자를 입력해 주세요 : ")
                 val numbersString = inputString()
-                val numbers = convert(numbersString)
+                val numbers = convertToValueObjects(numbersString)
                 val player = Player(numbers)
                 val matchResults = computer.match(player)
-                println("# 매칭 결과 = $matchResults")
                 println(view(matchResults))
                 if (matchResults.isAllStrike()) {
                     break
@@ -45,7 +46,7 @@ class BaseBallGame {
     private fun inputString() = scanner.nextLine()!!
     private fun inputNumber() = scanner.nextInt()
 
-    private fun convert(numbersString: String) = numbersString.toCharArray().withIndex()
+    private fun convertToValueObjects(numbersString: String) = numbersString.toCharArray().withIndex()
         .map { BallNumber(it.index, it.value.code - '0'.code) }
         .toList()
 

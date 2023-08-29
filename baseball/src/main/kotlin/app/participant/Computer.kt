@@ -1,4 +1,8 @@
-package app
+package app.participant
+
+import app.BallNumber
+import app.MatchResult
+import app.MatchResults
 
 class Computer(ballNumbers: List<BallNumber>) : Participant(ballNumbers) {
 

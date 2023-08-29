@@ -1,5 +1,7 @@
 package app
 
+import app.participant.Computer
+import app.participant.Player
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 
