@@ -11,7 +11,7 @@ class BaseBallGame(private val io: IoWrapper) {
     fun run() {
         while (true) {
             val computer = Computer(generateComputerBallNumbers())
-            println("### Computer Number = ${computer.ballNumbers} ###")
+//            println("### Computer Number = ${computer.ballNumbers} ###")
 
             while (true) {
                 println("숫자를 입력해 주세요 : ")
@@ -55,6 +55,10 @@ class BaseBallGame(private val io: IoWrapper) {
         return Random().asKotlinRandom().nextInt(0, 9 * 8 * 7 + 1)
     }
 
+    private fun MatchResults.view() {
+        println(view(this))
+    }
+
     private fun view(result: MatchResults) =
         when {
             result.ballCase() -> "${result.ball}볼"
@@ -62,8 +66,4 @@ class BaseBallGame(private val io: IoWrapper) {
             result.ballAndStrikeCase() -> "${result.ball}볼 ${result.strike}스트라이크"
             else -> "낫싱"
         }
-
-    private fun MatchResults.view() {
-        println(view(this))
-    }
 }

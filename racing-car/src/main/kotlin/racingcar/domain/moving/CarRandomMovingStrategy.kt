@@ -8,9 +8,9 @@ class CarRandomMovingStrategy : CarMovingStrategy {
 
     override fun isMoveStatus(): Boolean {
 
-        val randomNo = random.nextInt(10)
+        val randomNumber = random.nextInt(10)
 
         // TODO Refactor This !!
-        return randomNo !in 0..3
+        return randomNumber !in 0..3
     }
 }

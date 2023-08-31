@@ -26,7 +26,7 @@ class RunningCarGame(
 
     private fun delay() = timeDelay.delay()
 
-    private fun gameIsRunning() = !gameMemory.isRunningGame()
+    private fun gameIsRunning() = gameMemory.isRunningGame()
 
     private fun display(cars: List<Car>) {
         for (car in cars) {

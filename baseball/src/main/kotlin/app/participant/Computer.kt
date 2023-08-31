@@ -6,15 +6,9 @@ import app.MatchResults
 
 class Computer(ballNumbers: List<BallNumber>) : Participant(ballNumbers) {
 
-    // TODO 계산 로직 : Participant
     fun match(other: Participant): MatchResults {
-
-
-
         val matchResultCollection = calculateMatchResults(other)
-
-        val result = MatchResults(matchResultCollection)
-        return result
+        return MatchResults(matchResultCollection)
     }
 
     private fun calculateMatchResults(other: Participant): List<MatchResult> {
