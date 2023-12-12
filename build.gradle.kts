@@ -7,9 +7,10 @@ plugins {
 
 val projectGroup: String by project
 val projectVersion: String by project
+
 val kotestVersion: String by project
+val javaVersion: String by project
 val assertJCoreVersion: String by project
-val jvmBytecodeVersion: String by project
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -44,7 +45,7 @@ subprojects {
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             freeCompilerArgs += "-Xjsr305=strict"
-            jvmTarget = jvmBytecodeVersion
+            jvmTarget = javaVersion
         }
     }
 }
