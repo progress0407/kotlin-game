@@ -17,6 +17,7 @@ class InputCarGame(
         val carNames = inputCarNames()
         val trialNumbers = inputTrialNumbers()
         val cars = createCars(carNames, trialNumbers)
+
         inputGameMemory(cars)
     }
 

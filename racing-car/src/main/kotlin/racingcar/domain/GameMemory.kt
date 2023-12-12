@@ -1,5 +1,8 @@
 package racingcar.domain
 
+/**
+ * 게임의 상태를 공유하기 위한 Wrapper 객체
+ */
 data class GameMemory(var gameState: GameState = GameState.INPUT) {
 
     var cars: Cars? = null

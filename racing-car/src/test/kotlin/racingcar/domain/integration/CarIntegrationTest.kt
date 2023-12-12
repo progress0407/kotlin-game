@@ -10,7 +10,7 @@ class CarIntegrationTest : StringSpec({
     val movingStrategy = CarFixedMovingStrategy()
     val car = Car("philz", movingStrategy)
 
-    "Fake Moving Strategy로 Car의 움직임을 제어한다" {
+    "Fake `Moving Strategy`를 이용하면 Car의 움직임을 제어할 수 있다" {
 
         car.move()
         car.position shouldBe 1

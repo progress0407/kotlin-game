@@ -5,6 +5,7 @@ import io.kotest.matchers.collections.shouldContainExactly
 import io.kotest.matchers.shouldBe
 import racingcar.domain.GameMemory
 import racingcar.domain.GameState
+import racingcar.domain.fixture.CarFixture
 import racingcar.domain.moving.CarFixedMovingStrategy
 import racingcar.io.IoWrapper
 import racingcar.time.TimeDelay
@@ -13,7 +14,7 @@ import java.io.InputStream
 
 class CarGameAppTest : BehaviorSpec({
 
-    given("bb,cc,aa 자동차가 5회") {
+    given("자동차 bb, cc, aa 가 5회 이동할 때") {
 
         val inputStream = createInputStream("bb,cc,aa\n5")
 
@@ -27,7 +28,7 @@ class CarGameAppTest : BehaviorSpec({
 
             carGameApp.run()
 
-            then("메모리 내용을 검증한다") {
+            then("승자의 위치는 5이고 게임 상태는 END, 이름은 오름차순으로 정렬된다") {
 
                 val winners = gameMemory.cars!!.winners()
                 val winnerOne = winners[0]
