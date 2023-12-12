@@ -12,9 +12,6 @@ val kotestVersion: String by project
 val javaVersion: String by project
 val assertJCoreVersion: String by project
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-}
 
 allprojects {
     group = projectGroup
